@@ -15,7 +15,7 @@ int bmpToTexture(const char *file_name, SDL_Renderer *renderer, SDL_Texture **st
     SDL_Log("The BMP size is %llux%llu", image_size[0], image_size[1]);//Whidth and Height of img in px
 
     Sint32 row_size = image_size[0] * sdl_channels;
-    SDL_Log("The BMP row size is %llu", row_size);//Width * channels
+    SDL_Log("The BMP row size is %llu", row_size);//Width * channels(3)
 
     Sint32 padded_row_size = (row_size / sdl_alignment) * sdl_alignment;
     if (row_size % sdl_alignment) padded_row_size += sdl_alignment;
@@ -25,7 +25,6 @@ int bmpToTexture(const char *file_name, SDL_Renderer *renderer, SDL_Texture **st
     SDL_Log("the start point: %llu", *head);//Content+offset(where the pixels bytes starts)
 
     Sint8 *pixels = SDL_malloc(image_size[0]*image_size[1]*sdl_channels);
-    SDL_Log("total amount of pixels bytes: %llu", *pixels);//Content+offset(where the pixels bytes starts)
 
     if (!pixels)
     {
