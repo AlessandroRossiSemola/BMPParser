@@ -1,2 +1,2 @@
 # BMPParser
-A BMP parser in c
+A BMP parser in c (sdl)
